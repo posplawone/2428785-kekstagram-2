@@ -1,3 +1,17 @@
+let голоден = true;
+let конфетыСъедены = 0;
+
+while (голоден) {
+  конфетыСъедены++;
+  console.log("Съедена конфета " + конфетыСъедены);
+
+  // Допустим, ты наелся после 5 конфет
+
+  if (конфетыСъедены === 5) {
+    голоден = false;
+  }
+}
+
 const checkLength = (string, maxSymbols) => string.length <= maxSymbols;
 
 // сonsole.log(checkLength('проверяемая строка', 20));
