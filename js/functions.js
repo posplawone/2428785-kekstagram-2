@@ -1,36 +1,12 @@
-const checkLength = (string, maxSymbols) => string.length <= maxSymbols;
+let голоден = true;
+let конфетыСъедены = 0;
 
-// сonsole.log(checkLength('проверяемая строка', 20));
-// console.log(checkLength('проверяемая строка', 18));
-// console.log(checkLength('проверяемая строка', 10));
+while (голоден) {
+  конфетыСъедены++;
+  console.log("Съедена конфета " + конфетыСъедены);
 
-const isPalindrom = (string) => {
-    string = string.replaceAll(' ', '').toLowerCase();
-    let reversed = '';
-    for (let i = string.length - 1; i >= 0; i--) {
-        reversed += string[i];
-    }
-    return string === reversed;
-};
-
-
-// console.log(isPalindrom('топот'));
-// console.log(isPalindrom('ДовОд'));
-// console.log(isPalindrom('Кекс'));
-
-const getNumber = (text) => {
-let result = '';
-for(let j=0; j<text.length; j++){
-    const attempt = parseInt(text[j], 10);
-    if(!isNaN(attempt)){
-        result = result + text[j]
-    }
+  // Допустим, ты наелся после 5 конфет
+  if (конфетыСъедены === 5) {
+    голоден = false;
+  }
 }
-    return parseInt(result, 10);
-};
-
-console.log(getNumber('2023 год'))
-console.log(getNumber('ECMAScript 2022'))
-console.log(getNumber('1 кефир, 0.5 батона'))
-console.log(getNumber('агент 007'))
-console.log(getNumber('а я томат'))
